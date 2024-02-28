@@ -11,14 +11,16 @@ class CreateUserUseCase {
   ) {}
 
   async execute({ name, email }: ICreateUserDTO) {
+    const userAlreadyExists = await this.userRepository.findByEmail(email)
+
+    if (userAlreadyExists) {
+      throw new AppError('Email already registered', 400)
+    }
+
     const createdUser = await this.userRepository.create({
       name,
       email,
     })
-
-    if (!createdUser) {
-      throw new AppError('Erro ao cadastrar usuário', 400)
-    }
 
     return createdUser
   }

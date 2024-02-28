@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx src/server.ts",
-    "test": "jest",
+    "test": "jest ",
     "test:coverage": "jest --coverage"
   },
   "packageManager": "yarn@4.1.0",
@@ -19,6 +19,7 @@
     "jest": "^29.7.0",
     "prisma": "^5.4.2",
     "ts-jest": "^29.1.2",
+    "tsconfig-paths": "^4.2.0",
     "tsx": "^3.13.0"
   },
   "dependencies": {
